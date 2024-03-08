@@ -4,7 +4,6 @@ public class DosStringhe {
         Scanner in=new Scanner(System.in);
         System.out.println("Inserire una stringa");
         String s=in.nextLine();
-        s=s.toLowerCase();
         System.out.println("La stringa di consonanti è: "+consonanti(s));
         System.out.println("La stringa di vocali è: "+vocali(s));
 
@@ -32,6 +31,7 @@ public class DosStringhe {
             return false;
     }
     private static boolean isConsonant(char t){
+        t=Character.toLowerCase(t);
         if (Character.isLetter(t)){
             switch (t){
                 case 'a':
