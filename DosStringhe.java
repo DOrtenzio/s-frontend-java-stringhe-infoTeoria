@@ -17,19 +17,9 @@ public class DosStringhe {
 
     }
     private static boolean isVocal(char t){
-        if (Character.isLetter(t)){
-            switch (t){
-                case 'a':
-                case 'e':
-                case 'i':
-                case 'o':
-                case 'u':
-                case 'y':
-                    return true;
-                default:
-                    return false;
-            }
-        }else
+        if (Character.isLetter(t) && !isConsonant(t))
+            return true;
+        else
             return false;
     }
     private static boolean isConsonant(char t){
