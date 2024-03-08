@@ -1,20 +1,29 @@
 import java.util.Scanner;
 public class DosStringhe {
     public static void main(String[] args) {
-        String vocali="",consonanti="";
         Scanner in=new Scanner(System.in);
         System.out.println("Inserire una stringa");
         String s=in.nextLine();
+        s=s.toLowerCase();
+        System.out.println("La stringa di consonanti è: "+consonanti(s));
+        System.out.println("La stringa di vocali è: "+vocali(s));
+
+    }
+    private static String vocali(String s){
+        String vocali="";
         for (int i=0;i<s.length();i++){
-            s=s.toLowerCase();
             if (isVocal(s.charAt(i)))
                 vocali=vocali+s.charAt(i);
-            else if (isConsonant(s.charAt(i)))
+        }
+        return vocali;
+    }
+    private static String consonanti(String s){
+        String consonanti="";
+        for (int i=0;i<s.length();i++){
+            if (isConsonant(s.charAt(i)))
                 consonanti=consonanti+s.charAt(i);
         }
-        System.out.println("La stringa di consonanti è: "+consonanti);
-        System.out.println("La stringa di vocali è: "+vocali);
-
+        return consonanti;
     }
     private static boolean isVocal(char t){
         if (Character.isLetter(t) && !isConsonant(t))
